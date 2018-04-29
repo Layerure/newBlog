@@ -14,3 +14,26 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(
+    [
+        'prefix' => 'admin',
+        'namespace' => 'Admin'
+    ],
+
+    function () {
+
+        # 后台管理员登录
+        Route::post('login', 'Admin@Login');
+
+        # 后台管理员注册
+        Route::post('register', 'Admin@Register');
+
+
+    }
+
+);
