@@ -28,7 +28,7 @@ Route::group(
     function () {
 
         # 后台管理员登录
-        Route::post('login', 'Admin@Login');
+        Route::get('login', 'Admin@Login');
 
         # 后台管理员注册
         Route::post('register', 'Admin@Register');
