@@ -26,16 +26,12 @@ Route::group(
     ],
 
     function () {
-
         # 后台管理员登录
         Route::get('login', 'Admin@Login');
 
         # 后台管理员注册
         Route::post('register', 'Admin@Register');
-
-
     }
-
 );
 
 #标签的路由
