@@ -69,7 +69,17 @@ class Articles extends Controller
     public function list(Request $req)
     {
 
-        $list = Article::get();
+        $article = new Article();
+        if ($req->$cate_id) {
+            $article = $article->where('cate_id', $cate_id);
+        }
+        if ($req->$user_id) {
+            $article = $article->where('user_id', $user_id);
+        }
+        if ($req->$label_id) {
+            $article = $article->where('label_id', $label_id);
+        }
+        $list = $article->get();
         return $list;
     }
 
