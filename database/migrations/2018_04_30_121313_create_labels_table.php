@@ -16,7 +16,7 @@ class CreateLabelsTable extends Migration
         Schema::create('labels', function (Blueprint $table) {
             $table->engine = 'innodb';
             $table->increments('id');
-            $table->smallInteger('title');
+            $table->String('title');
             $table->timestamps();
         });
     }

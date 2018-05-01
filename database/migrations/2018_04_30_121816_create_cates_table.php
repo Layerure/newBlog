@@ -16,7 +16,7 @@ class CreateCatesTable extends Migration
         Schema::create('cates', function (Blueprint $table) {
             $table->engine = 'innodb';
             $table->increments('id');
-            $table->smallInteger('title');
+            $table->String('title');
             $table->text('description');
             $table->timestamps();
         });

@@ -16,12 +16,10 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->engine = 'innodb';
             $table->increments('id');
-            $table->smallInteger('title');
+            $table->String('title');
             $table->text('content');
             $table->smallInteger('cate_id');
             $table->smallInteger('user_id');
-            $table->dateTime('write_at');
-            $table->dateTime('update_at');
             $table->timestamps();
         });
     }
